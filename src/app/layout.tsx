@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import React from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="flex flex-col  justify-evenly items-center">
+          <div
+            className={
+              "flex flex-col align-middle items-center justify-between gap-5 px-12 py-9"
+            }
+          >
+            {children}
+          </div>
+          <p className="text-slate-400 text-sm">
+            © 2045 All Rights Reserved By Ilman Teguh Prasetya
+          </p>
+        </div>
+      </body>
     </html>
   );
 }
