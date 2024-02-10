@@ -55,7 +55,6 @@ export default function Home() {
               key={item.id}
             >
               <button
-                type="checkbox"
                 className="ml-2 px-4 py-3 rounded-md bg-red-300 text-white"
                 onClick={() => removeData(item.id, setData)}
                 value={"X"}
