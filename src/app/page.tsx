@@ -22,9 +22,11 @@ export default function Home() {
       ...prevData,
       { id: generateUniqueId(), todo: formData.todo },
     ]);
-    e?.target.reset(); // Reset form after submission
+    e?.target.reset();
   };
   const stringForLabelInput = "What do you want to do today?";
+  const labelTaskLeft = "Task Left";
+  const buttonLabel = "Add";
   return (
     <div className="flex flex-col  justify-center items-center gap-8">
       <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
@@ -37,8 +39,11 @@ export default function Home() {
             placeholder="Buy Milk"
             {...register("todo", { required: true })}
           />
-          <button className="px-7 py-5 bg-red-200" type="submit">
-            Add
+          <button
+            className="px-7 py-5 bg-green-500 text-slate-100"
+            type="submit"
+          >
+            {buttonLabel}
           </button>
         </div>
       </form>
@@ -62,7 +67,9 @@ export default function Home() {
           ))}
         </ul>
       </div>
-      <p>Task Left {data.length}</p>
+      <p>
+        {labelTaskLeft} {data.length}
+      </p>
     </div>
   );
 }
